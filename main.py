@@ -23,6 +23,7 @@ def load_known_faces(known_faces_dir=r"C:\Users\saipr\OneDrive\Desktop\New folde
             if results.multi_face_landmarks:
                 face_landmarks = results.multi_face_landmarks[0]
                 # Extract the landmarks as an encoding (normalized x, y coordinates)
+                ## need to update landmarks
                 landmarks = [(lm.x, lm.y) for lm in face_landmarks.landmark]
                 known_face_encodings.append(landmarks)
                 known_face_names.append(os.path.splitext(filename)[0])  # File name as label
